@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>출생신고서</title>
+</head>
+<body>
+<h1>출생신고서</h1>
+<table border = "1">
+  <tr>출생신고서</tr>
+  <tr>
+    <th rowspan = "4">출생자</th>
+    <th>성명</th>
+    <td th:text = "${resident.getName()}"></td>
+    <th>성별</th>
+    <td th:text = "${resident.getGenderCode()}"></td>
+  </tr>
+  <tr>
+    <th>출생일시</th>
+    <td colspan = "3" th:text = "${resident.getBirthDate()}"></td>
+  </tr>
+  <tr>
+    <th>출생장소</th>
+    <td colspan = "3" th:text = "${resident.getBirthPlaceCode()}"></td>
+  </tr>
+  <tr>
+    <th>등록기준지(본적)</th>
+    <td colspan = "3" th:text = "${resident.getRegistrationBaseAddress()}"></td>
+  </tr>
+  <tr th:each = "familyRelation : ${familyRelationshipList}">
+    <td  th:if = "${familyRelation.getFamilyRelationshipCode()} == 부">부</td>
+    <td th:if = "${familyRelation.getFamilyRelationshipCode()} == 부" th:text = "${familyRelation.getResident().getName()}"></td>
+    <td th:if = "${familyRelation.getFamilyRelationshipCode()} == 부" th:text = "${familyRelation.getResident().getBirthDate()}"></td>
+    <td th:if = "${familyRelation.getFamilyRelationshipCode()} == 부" th:text = "${familyRelation.getResident().getResidentRegistrationNumber()}"></td>
+    <td th:if = "${familyRelation.getFamilyRelationshipCode()} == 부" th:text = "${familyRelation.getResident().getGenderCode()}"></td>
+    <td  th:if = "${familyRelation.getFamilyRelationshipCode()} == 모">모</td>
+    <td th:if = "${familyRelation.getFamilyRelationshipCode()} == 모" th:text = "${familyRelation.getResident().getName()}"></td>
+    <td th:if = "${familyRelation.getFamilyRelationshipCode()} == 모" th:text = "${familyRelation.getResident().getBirthDate()}"></td>
+    <td th:if = "${familyRelation.getFamilyRelationshipCode()} == 모" th:text = "${familyRelation.getResident().getResidentRegistrationNumber()}"></td>
+    <td th:if = "${familyRelation.getFamilyRelationshipCode()} == 모" th:text = "${familyRelation.getResident().getGenderCode()}"></td>
+  </tr>
+</table>
+</body>
+</html>
