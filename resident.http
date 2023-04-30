@@ -1,0 +1,25 @@
+POST /residents HTTP/1.1
+Content-Type: application/json
+Host: localhost:8080
+
+{
+  "name": "정유빈",
+  "residentRegistrationNumber": "123456-1234567",
+  "genderCode": "여",
+  "birthDate": "1913-09-14 07:22:00",
+  "birthPlaceCode": "병원",
+  "registrationBaseAddress": "경기도 수원시 영통구 센트럴타운로 76"
+}
+
+###
+PUT /residents/2 HTTP/1.1
+Content-Type: application/json
+Host: localhost:8080
+
+{
+  "name": "짱구"
+}
+###
+GET /residents HTTP/1.1
+Content-Type: application/json
+Host: localhost:8080

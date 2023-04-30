@@ -1,0 +1,14 @@
+POST /household
+Content-Type: application/json
+Host: localhost:8080
+
+{
+  "householdResidentSerialNumber": 9,
+  "householdCompositionDate": "2021-11-11",
+  "householdCompositionReasonCode": "세대분리",
+  "currentHouseMovementAddress": "경기도 수원시 영통구"
+}
+###
+DELETE /household/12
+Content-Type: application/json
+Host: localhost:8080

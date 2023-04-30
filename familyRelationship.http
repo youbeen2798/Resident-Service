@@ -1,0 +1,23 @@
+POST /residents/1/relationship HTTP/1.1
+Content-Type: application/json
+Host: localhost:8080
+
+{
+  "familySerialNumber": 7,
+  "relationShip": "father"
+}
+
+###
+
+PUT /residents/1/relationship/3 HTTP/1.1
+Content-Type: application/json
+Host: localhost:8080
+
+{
+"relationShip": "mother"
+}
+###
+
+DELETE /residents/1/relationship/3 HTTP/1.1
+Content-Type: application/json
+Host: localhost:8080

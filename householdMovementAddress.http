@@ -1,0 +1,23 @@
+POST /household/3/movement
+Content-Type: application/json
+Host: localhost:8080
+
+{
+  "houseMovementReportDate": "2021-05-15",
+  "houseMovementAddress": "경기도 화성시",
+  "lastAddressYn": "Y"
+}
+###
+PUT /household/3/movement/2021-05-09
+Content-Type: application/json
+Host: localhost:8080
+
+{
+  "houseMovementAddress": "경기도 화성시 산척동",
+  "lastAddressYn": "N"
+}
+
+###
+DELETE /household/2/movement/2021-05-01
+Content-Type: application/json
+Host: localhost:8080
